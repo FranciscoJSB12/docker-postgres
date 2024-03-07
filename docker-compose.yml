@@ -1,11 +1,13 @@
-version: '3.3'
+version: '3'
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:15.3
+    container_name: postgres-db
+    restart: always
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=rootpassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
     volumes:
